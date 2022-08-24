@@ -1,0 +1,45 @@
+@import 'src/styles/_variables';
+
+@mixin background-image($path: '', $repeat: no-repeat, $position: center, $size: cover) {
+  background-image: url($path);
+  background-repeat: #{$repeat};
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin flex($j: center, $a: center) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin stretch-absolute() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@mixin center-absolute() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin width-height($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 350ms, opacity 350ms;
+}
+
+@mixin show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 350ms;
+}

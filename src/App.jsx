@@ -1,3 +1,8 @@
+import { useState } from 'react';
+import { Burger } from 'src/components/common';
+
 export const App = () => {
-  return <div>hello world husky</div>;
+  const [isBurgerActive, setIsBurgeractive] = useState(false);
+
+  return <Burger isActive={isBurgerActive} setIsActive={setIsBurgeractive} />;
 };
