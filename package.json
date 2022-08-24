@@ -5,6 +5,7 @@
   "description": "read novels I like in Ukrainian and other languages",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "lint": "eslint --ext .jsx --ext .js src/",
@@ -43,6 +44,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "^2.7.1",
     "react-refresh": "^0.14.0",
@@ -54,5 +57,13 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "yarn lint"
+    ],
+    "**/*.{js,jsx,json,css,scss,md}": [
+      "yarn prettier --write"
+    ]
   }
 }
