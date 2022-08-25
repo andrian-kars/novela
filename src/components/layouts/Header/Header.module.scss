@@ -1,0 +1,55 @@
+@import 'src/styles/_mixins';
+@import 'src/styles/_variables';
+@import './../variables';
+
+.whrapper {
+  @include flex(space-between);
+  @include position(fixed);
+  height: $header-height-mobile;
+
+  padding: 0 $whrapper-padding;
+  background-color: $primary-color;
+  box-shadow: $bottom-shadow;
+  z-index: $bigger-nice-index;
+
+  @media (min-width: $tablet) {
+    height: $header-height-tablet;
+  }
+
+  @media (min-width: $desktop) {
+    height: $header-height;
+  }
+}
+
+// .heading {
+//   display: none;
+
+//   @media (min-width: $tablet) {
+//     display: block;
+//   }
+// }
+
+.left,
+.right {
+  @include flex(space-around);
+}
+
+.burgerNav {
+  cursor: pointer;
+  margin-top: 0.1875rem;
+  padding: 0.1875rem 0.1875rem 0.375rem;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.whrapperHomeLink {
+  @include flex(flex-start);
+  margin-right: 0.4375rem;
+
+  @media (min-width: $tablet) {
+    min-width: 10rem;
+    margin-right: 0;
+  }
+}

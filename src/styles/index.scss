@@ -41,6 +41,11 @@ html {
 
 html,
 body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
   background-color: $background-color;
 }
 
@@ -83,14 +88,6 @@ select {
   border: none;
   background-color: transparent;
   color: $white-color;
-}
-
-body {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 16px;
 }
 
 ::-webkit-scrollbar {

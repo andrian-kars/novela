@@ -38,6 +38,7 @@
     "@babel/runtime": "^7.18.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "babel-loader": "^8.2.5",
+    "classnames": "^2.3.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.22.0",
@@ -61,7 +62,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [

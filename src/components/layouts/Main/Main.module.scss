@@ -1,0 +1,25 @@
+@import 'src/styles/_mixins';
+@import 'src/styles/_variables';
+@import './../variables';
+
+.main {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: $header-height-mobile;
+  background-color: $background-color;
+
+  @media (min-width: $tablet) {
+    padding-top: $header-height-tablet;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: $header-height;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: $content-max-width;
+  padding: $whrapper-padding;
+}

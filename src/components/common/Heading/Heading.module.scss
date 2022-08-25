@@ -1,0 +1,16 @@
+@import 'src/styles/_variables';
+
+.heading {
+  line-height: 0;
+  margin-left: 0.4375rem;
+  font-size: 1.125rem;
+
+  @media (min-width: $tablet) {
+    font-size: 1.625rem;
+    margin-left: 0.625rem;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 1.875rem;
+  }
+}
