@@ -7,16 +7,10 @@
   background-color: $btn-color;
   border-radius: $border-radius;
   font-size: 0.875rem;
-  height: 32px;
+  height: 2rem;
   padding: 0 1.5rem;
-  transition: 0.3s;
+  transition: $simple-transition;
   cursor: pointer;
-
-  //   @media (min-width: $tablet) {
-  //     font-size: 1rem;
-  //     height: 36px;
-  //     padding: 0 1.75rem;
-  //   }
 
   &:hover {
     background-color: $btn-hover-color;

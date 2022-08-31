@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../common';
-import styles from './ErrorPage.module.scss';
+import { Button } from 'src/components/common';
+import s from './ErrorPage.module.scss';
 
-export const ErrorPage = ({ error }) => {
+export const ErrorPage = ({ errorCode }) => {
   let title, subTitle;
   const navigate = useNavigate();
 
-  switch (error) {
+  const handleBack = () => {
+    navigate(-1) || navigate('/');
+  };
+
+  switch (errorCode) {
     case '400':
-      title = ' Invalid request.';
+      title = 'Invalid request.';
       subTitle = 'The server cannot process your request.';
       break;
     case '403':
@@ -38,15 +42,15 @@ export const ErrorPage = ({ error }) => {
   }
 
   return (
-    <div className={styles.errorPageContainer}>
-      <h1>{error}</h1>
+    <div className={s.errorPageContainer}>
+      <h1>{errorCode}</h1>
       <p>{title}</p>
       <p>{subTitle}</p>
-      <Button label="button" handleClick={() => navigate(-1) || navigate('/')} />
+      <Button label="button" handleClick={handleBack} />
     </div>
   );
 };
 
 ErrorPage.propTypes = {
-  error: PropTypes.string
+  errorCode: PropTypes.string
 };

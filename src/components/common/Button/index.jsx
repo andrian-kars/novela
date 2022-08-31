@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import styles from './Button.module.scss';
+import s from './Button.module.scss';
 
 export const Button = ({ className, label, handleClick, disabled, type = 'button' }) => (
   <button
-    className={className ? className : styles.content}
+    className={className ? className : s.content}
     type={type}
     disabled={disabled}
     onClick={handleClick}

@@ -21,14 +21,6 @@
   }
 }
 
-// .heading {
-//   display: none;
-
-//   @media (min-width: $tablet) {
-//     display: block;
-//   }
-// }
-
 .left,
 .right {
   @include flex(space-around);
