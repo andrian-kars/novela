@@ -1,3 +1,4 @@
 export const common = Object.freeze({
-  appName: 'Новела'
+  appName: 'Новела',
+  title: 'Новела'
 });
