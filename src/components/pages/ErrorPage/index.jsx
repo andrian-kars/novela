@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'src/components/common';
-import errorsCodes from 'src/constans';
+import statusCodes from 'src/constans';
 import s from './ErrorPage.module.scss';
 
 export const ErrorPage = ({ errorCode }) => {
@@ -15,7 +15,7 @@ export const ErrorPage = ({ errorCode }) => {
     ERROR_CODE_500,
     ERROR_CODE_502,
     ERROR_CODE_503
-  } = errorsCodes;
+  } = statusCodes;
 
   const handleBack = () => {
     navigate(-1) || navigate('/');
