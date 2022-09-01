@@ -1,38 +1,49 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'src/components/common';
+import errors from 'src/constans';
 import s from './ErrorPage.module.scss';
 
 export const ErrorPage = ({ errorCode }) => {
   let title, subTitle;
   const navigate = useNavigate();
 
+  const {
+    ERROR_CODE_400,
+    ERROR_CODE_403,
+    ERROR_CODE_404,
+    ERROR_CODE_500,
+    ERROR_CODE_502,
+    ERROR_CODE_503
+  } = errors;
+  console.log(ERROR_CODE_404);
+
   const handleBack = () => {
     navigate(-1) || navigate('/');
   };
 
   switch (errorCode) {
-    case '400':
+    case ERROR_CODE_400:
       title = 'Invalid request.';
       subTitle = 'The server cannot process your request.';
       break;
-    case '403':
+    case ERROR_CODE_403:
       title = 'Forbidden.';
       subTitle = 'Access to the resource is restricted.';
       break;
-    case '404':
+    case ERROR_CODE_404:
       title = 'This page was not found.';
       subTitle = 'The requested page does not exist.';
       break;
-    case '500':
+    case ERROR_CODE_500:
       title = 'Server error';
       subTitle = 'There is a specific problem on the server.';
       break;
-    case '502':
+    case ERROR_CODE_502:
       title = 'Gateway error.';
       subTitle = 'An invalid response was received from another server.';
       break;
-    case '503':
+    case ERROR_CODE_503:
       title = 'the service is unavailable';
       subTitle = 'the server is temporarily unable to process the request';
       break;
