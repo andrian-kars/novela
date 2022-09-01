@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'src/components/common';
 import {
@@ -14,6 +15,7 @@ import s from './ErrorPage.module.scss';
 export const ErrorPage = ({ errorCode }) => {
   let title, subTitle;
   const navigate = useNavigate();
+  const { formatMessage } = useIntl();
 
   const handleBack = () => {
     navigate(-1) || navigate('/');
@@ -21,32 +23,32 @@ export const ErrorPage = ({ errorCode }) => {
 
   switch (errorCode) {
     case ERROR_CODE_400:
-      title = 'Invalid request.';
-      subTitle = 'The server cannot process your request.';
+      title = formatMessage({ id: 'error.400.title' });
+      subTitle = formatMessage({ id: 'error.400.subTitle' });
       break;
     case ERROR_CODE_403:
-      title = 'Forbidden.';
-      subTitle = 'Access to the resource is restricted.';
+      title = formatMessage({ id: 'error.403.title' });
+      subTitle = formatMessage({ id: 'error.403.subTitle' });
       break;
     case ERROR_CODE_404:
-      title = 'This page was not found.';
-      subTitle = 'The requested page does not exist.';
+      title = formatMessage({ id: 'error.404.title' });
+      subTitle = formatMessage({ id: 'error.404.subTitle' });
       break;
     case ERROR_CODE_500:
-      title = 'Server error';
-      subTitle = 'There is a specific problem on the server.';
+      title = formatMessage({ id: 'error.500.title' });
+      subTitle = formatMessage({ id: 'error.500.subTitle' });
       break;
     case ERROR_CODE_502:
-      title = 'Gateway error.';
-      subTitle = 'An invalid response was received from another server.';
+      title = formatMessage({ id: 'error.502.title' });
+      subTitle = formatMessage({ id: 'error.502.subTitle' });
       break;
     case ERROR_CODE_503:
-      title = 'the service is unavailable';
-      subTitle = 'the server is temporarily unable to process the request';
+      title = formatMessage({ id: 'error.503.title' });
+      subTitle = formatMessage({ id: 'error.503.subTitle' });
       break;
     default:
-      title = 'unknown error';
-      subTitle = 'an unknown error occurred';
+      title = formatMessage({ id: 'error.default.title' });
+      subTitle = formatMessage({ id: 'error.default.subTitle' });
   }
 
   return (
