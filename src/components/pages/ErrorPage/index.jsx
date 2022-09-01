@@ -1,21 +1,19 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'src/components/common';
-import statusCodes from 'src/constans';
+import {
+  ERROR_CODE_400,
+  ERROR_CODE_403,
+  ERROR_CODE_404,
+  ERROR_CODE_500,
+  ERROR_CODE_502,
+  ERROR_CODE_503
+} from '../../../constans';
 import s from './ErrorPage.module.scss';
 
 export const ErrorPage = ({ errorCode }) => {
   let title, subTitle;
   const navigate = useNavigate();
-
-  const {
-    ERROR_CODE_400,
-    ERROR_CODE_403,
-    ERROR_CODE_404,
-    ERROR_CODE_500,
-    ERROR_CODE_502,
-    ERROR_CODE_503
-  } = statusCodes;
 
   const handleBack = () => {
     navigate(-1) || navigate('/');

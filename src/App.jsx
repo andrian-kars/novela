@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Header, Main } from 'src/components/layouts';
 import { ChapterPage, InitialPage, ErrorPage } from './components/pages';
-import statusCodes from 'src/constans';
+import { ERROR_CODE_404 } from './constans';
 import './styles/index.scss';
 
 export const App = () => (
@@ -11,7 +11,7 @@ export const App = () => (
       <Routes>
         <Route path="/" element={<InitialPage />} />
         <Route path="/chapter" element={<ChapterPage />} />
-        <Route path="*" element={<ErrorPage errorCode={statusCodes.ERROR_CODE_404} />} />
+        <Route path="*" element={<ErrorPage errorCode={ERROR_CODE_404} />} />
       </Routes>
     </Main>
   </>
