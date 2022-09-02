@@ -9,7 +9,7 @@ import {
   ERROR_CODE_500,
   ERROR_CODE_502,
   ERROR_CODE_503
-} from '../../../constans';
+} from '../../../constants';
 import s from './ErrorPage.module.scss';
 
 export const ErrorPage = ({ errorCode }) => {
