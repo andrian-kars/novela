@@ -4,7 +4,7 @@ export const common = Object.freeze({
   'error.400.title': 'Невірний запит',
   'error.400.subTitle': 'The server cannot process your request.',
   'error.403.title': 'Заборонено.',
-  'error.403.subTitle': 'Доступ до ресурсу обмежено.',
+  'error.403.subTitle': 'Доступ до цього ресурсу обмежено.',
   'error.404.title': 'Сторінку не знайдено.',
   'error.404.subTitle': 'Потрібна сторінка не існує.',
   'error.500.title': 'Помилка сервера',
