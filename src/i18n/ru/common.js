@@ -1,5 +1,6 @@
 export const common = Object.freeze({
   appName: 'Новела',
+  title: 'Новела',
   'error.400.title': 'Невірний запит',
   'error.400.subTitle': 'The server cannot process your request.',
   'error.403.title': 'Заборонено.',
