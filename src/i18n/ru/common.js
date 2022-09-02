@@ -1,5 +1,5 @@
 export const common = Object.freeze({
-  appName: 'Новела',
+  'appName': 'Новела',
   'error.400.title': 'Невірний запит',
   'error.400.subTitle': 'The server cannot process your request.',
   'error.403.title': 'Заборонено.',
@@ -14,4 +14,5 @@ export const common = Object.freeze({
   'error.503.subTitle': 'Сервер тимчасово не може обробити запит.',
   'error.default.title': 'Невідома помилка.',
   'error.default.subTitle': 'Відбулась невідома помилка.'
+  'title': 'Новела'
 });
