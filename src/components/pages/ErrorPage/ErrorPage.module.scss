@@ -1,0 +1,9 @@
+@import 'src/styles/_variables';
+@import 'src/styles/_mixins';
+
+.errorPageContainer {
+  @include flex();
+  flex-direction: column;
+  min-height: 88vh;
+  line-height: 2;
+}

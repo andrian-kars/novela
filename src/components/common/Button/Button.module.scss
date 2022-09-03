@@ -1,0 +1,22 @@
+@import 'src/styles/_variables';
+@import 'src/styles/_mixins';
+
+.content {
+  @include flex();
+  color: $super-white-color;
+  background-color: $btn-color;
+  border-radius: $border-radius;
+  font-size: 0.875rem;
+  height: 2rem;
+  padding: 0 1.5rem;
+  transition: $simple-transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-hover-color;
+  }
+
+  &:disabled {
+    background-color: $btn-disabled;
+  }
+}
