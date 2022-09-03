@@ -2,7 +2,7 @@
 @import 'src/styles/_mixins';
 
 .content {
-  @include flex();
+  @include flex(center, center, inline-flex);
   color: $super-white-color;
   background-color: $btn-color;
   border-radius: $border-radius;

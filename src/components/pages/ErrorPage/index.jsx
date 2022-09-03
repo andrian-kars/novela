@@ -56,7 +56,7 @@ export const ErrorPage = ({ errorCode }) => {
       <h1>{errorCode}</h1>
       <p>{title}</p>
       <p>{subTitle}</p>
-      <Button label="button" handleClick={handleBack} />
+      <Button handleClick={handleBack}>button</Button>
     </div>
   );
 };

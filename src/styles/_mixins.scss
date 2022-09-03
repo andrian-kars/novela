@@ -7,8 +7,8 @@
   background-size: $size;
 }
 
-@mixin flex($j: center, $a: center) {
-  display: flex;
+@mixin flex($j: center, $a: center, $f: flex) {
+  display: $f;
   justify-content: $j;
   align-items: $a;
 }
