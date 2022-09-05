@@ -1,0 +1,15 @@
+@import 'src/styles/_variables';
+@import 'src/styles/_mixins';
+
+.modalOverlay {
+  @include flex($j: right);
+  @include position($position: fixed);
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  z-index: 1000;
+}
+
+.modalLeftContent {
+  background-color: rebeccapurple;
+  min-height: 100vh;
+  width: 25%;
+}
