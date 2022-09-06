@@ -2,10 +2,13 @@ import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
 import s from './Modal.module.scss';
 
-export const Modal = ({ closeModal }) => {
+export const Modal = ({ closeModal, location }) => {
   return ReactDom.createPortal(
     <div className={s.modalOverlay} onClick={closeModal}>
-      <div className={s.modalRightContent} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={location === 'right' ? s.modalRightContent : s.modalBottomContent}
+        onClick={(e) => e.stopPropagation()}
+      >
         <p>Modal</p>
       </div>
     </div>,
@@ -14,7 +17,6 @@ export const Modal = ({ closeModal }) => {
 };
 
 Modal.propTypes = {
-  right: PropTypes.string,
-  bottom: PropTypes.string,
+  location: PropTypes.string,
   closeModal: PropTypes.func
 };
