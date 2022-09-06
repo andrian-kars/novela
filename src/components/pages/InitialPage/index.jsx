@@ -1,14 +1,21 @@
-import { useEffect } from 'react';
 import { useIntl } from 'react-intl';
+import { Button } from 'src/components/common';
+import { useEffectOnce } from 'src/hooks';
 
 export const InitialPage = () => {
   const { formatMessage } = useIntl();
 
-  useEffect(() => {
+  useEffectOnce(() => {
     console.log('InitialPage');
 
     document.title = formatMessage({ id: 'title' });
-  }, []);
+  });
 
-  return <p>initial</p>;
+  return (
+    <div>
+      <Button>-</Button>
+      <Button>16</Button>
+      <Button>+</Button>
+    </div>
+  );
 };
