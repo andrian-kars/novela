@@ -4,15 +4,15 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import { Button } from 'src/components/common/Button';
-import { Modal } from '../../common/Modal';
+import { Modal } from 'src/components/common/Modal';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
   const [triggerBurger, setTriggerBurger] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const modalHandler = () => {
-    setIsOpenModal(!isOpenModal);
+  const openModal = () => {
+    setIsOpenModal(true);
   };
 
   const closeModal = () => {
@@ -28,10 +28,8 @@ export const Header = () => {
         <div className={s.burgerNav}>
           <Burger isActive={triggerBurger} setIsActive={setTriggerBurger} />
         </div>
-        <Button handleClick={modalHandler}>
-          <p>open modal</p>
-        </Button>
-        <Modal open={isOpenModal} closeModal={closeModal} />
+        <Button handleClick={openModal}>open modal</Button>
+        {isOpenModal ? <Modal closeModal={closeModal} /> : null}
       </div>
     </header>
   );
