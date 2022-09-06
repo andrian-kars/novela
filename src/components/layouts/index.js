@@ -1,2 +1,2 @@
-export { Header } from './Header';
-export { Main } from './Main';
+export { Header } from './Header/Header';
+export { Main } from './Main/Main';

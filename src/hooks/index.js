@@ -1,1 +1,1 @@
-export { useEffectOnce } from './useEffectOnce';
+export { useEffectOnce } from './useEffectOnce/useEffectOnce';
