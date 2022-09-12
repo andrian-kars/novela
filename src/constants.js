@@ -1,3 +1,5 @@
+// breakpoints
+export const TABLET_WIDTH = 768;
 // error status code
 export const ERROR_CODE_400 = '400';
 export const ERROR_CODE_403 = '403';

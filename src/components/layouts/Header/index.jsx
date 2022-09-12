@@ -1,20 +1,16 @@
-import { Burger, Heading } from 'src/components/common';
+import { Burger, Heading, Button, Modal } from 'src/components/common';
 import s from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
-import { Button } from 'src/components/common/Button';
-import { Modal } from 'src/components/common/Modal';
 import { useDimension } from 'src/hooks/useDimension';
+import { TABLET_WIDTH } from 'src/constants';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
   const [triggerBurger, setTriggerBurger] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const { width, height } = useDimension();
-  console.log(width, height);
-
-  const tabletWidth = 768;
+  const { width } = useDimension();
 
   const openModal = () => {
     setIsOpenModal(true);
@@ -35,7 +31,9 @@ export const Header = () => {
         </div>
         <Button handleClick={openModal}>open modal</Button>
         {isOpenModal ? (
-          <Modal closeModal={closeModal} location={tabletWidth < width ? 'right' : 'bottom'} />
+          <Modal closeModal={closeModal} location={TABLET_WIDTH < width ? 'right' : 'bottom'}>
+            <p>Modal content</p>
+          </Modal>
         ) : null}
       </div>
     </header>
