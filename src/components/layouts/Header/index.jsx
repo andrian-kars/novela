@@ -3,21 +3,21 @@ import s from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
-import { useDimension } from 'src/hooks/useDimension';
+import { useDimension } from 'src/hooks';
 import { TABLET_WIDTH } from 'src/constants';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
   const [triggerBurger, setTriggerBurger] = useState(false);
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { width } = useDimension();
 
-  const openModal = () => {
-    setIsOpenModal(true);
+  const openModalHandler = () => {
+    setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsOpenModal(false);
+  const closeModalHandler = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -29,9 +29,12 @@ export const Header = () => {
         <div className={s.burgerNav}>
           <Burger isActive={triggerBurger} setIsActive={setTriggerBurger} />
         </div>
-        <Button handleClick={openModal}>open modal</Button>
-        {isOpenModal ? (
-          <Modal closeModal={closeModal} location={TABLET_WIDTH < width ? 'right' : 'bottom'}>
+        <Button handleClick={openModalHandler}>open modal</Button>
+        {isModalOpen ? (
+          <Modal
+            closeModalHandler={closeModalHandler}
+            location={TABLET_WIDTH < width ? 'right' : 'bottom'}
+          >
             <p>Modal content</p>
           </Modal>
         ) : null}

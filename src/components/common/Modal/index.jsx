@@ -1,26 +1,27 @@
-import ReactDom from 'react-dom';
 import PropTypes from 'prop-types';
 import s from './Modal.module.scss';
+import { Portal } from 'src/components/common';
 
-export const Modal = ({ closeModal, location, children }) => {
+export const Modal = ({ closeModalHandler, location, children }) => {
   const stopPropagetion = (e) => {
     e.stopPropagation();
   };
-  return ReactDom.createPortal(
-    <div className={s.modalOverlay} onClick={closeModal}>
-      <div
-        className={location === 'right' ? s.modalRightContent : s.modalBottomContent}
-        onClick={(e) => stopPropagetion(e)}
-      >
-        {children}
+  return (
+    <Portal>
+      <div className={s.modalOverlay} onClick={closeModalHandler}>
+        <div
+          className={location === 'right' ? s.modalRightContent : s.modalBottomContent}
+          onClick={(e) => stopPropagetion(e)}
+        >
+          {children}
+        </div>
       </div>
-    </div>,
-    document.getElementById('portal')
+    </Portal>
   );
 };
 
 Modal.propTypes = {
   location: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
-  closeModal: PropTypes.func.isRequired
+  closeModalHandler: PropTypes.func.isRequired
 };

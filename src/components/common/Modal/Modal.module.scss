@@ -5,11 +5,11 @@
   @include flex($j: right);
   @include position($position: fixed);
   background-color: rgba($color: #000000, $alpha: 0.6);
-  z-index: $bigger-nice-index;
+  z-index: $modal-index;
 }
 
 .modalRightContent {
-  background-color: rebeccapurple;
+  background-color: $white-color;
   min-height: 100vh;
   width: 25rem;
 }
