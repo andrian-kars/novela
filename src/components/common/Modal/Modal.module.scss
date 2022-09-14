@@ -2,21 +2,24 @@
 @import 'src/styles/_mixins';
 
 .modalOverlay {
-  @include flex($j: right);
   @include position($position: fixed);
   background-color: rgba($color: #000000, $alpha: 0.6);
-  z-index: $modal-index;
+  z-index: $modal-overlay-index;
 }
 
 .modalRightContent {
+  @include position($position: fixed, $left: false);
   background-color: $white-color;
   min-height: 100vh;
   width: 25rem;
+  z-index: $modal-index;
 }
 
 .modalBottomContent {
+  @include position($position: fixed, $top: false);
   align-self: flex-end;
   background-color: $white-color;
   width: 100vh;
   height: 25rem;
+  z-index: $modal-index;
 }
