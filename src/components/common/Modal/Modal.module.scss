@@ -3,7 +3,8 @@
 
 .modalOverlay {
   @include position($position: fixed);
-  background-color: rgba($color: #000000, $alpha: 0.6);
+  background-color: $background-color;
+  opacity: $modal-opacity;
   z-index: $modal-overlay-index;
 }
 
