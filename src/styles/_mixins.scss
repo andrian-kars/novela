@@ -17,12 +17,8 @@
   position: $position;
   right: $right;
   bottom: $bottom;
-  @if $top != false {
-    top: $top;
-  }
-  @if $left != false {
-    left: $left;
-  }
+  top: $top;
+  left: $left;
 }
 
 @mixin center-absolute() {

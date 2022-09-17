@@ -9,7 +9,7 @@
 }
 
 .modalRightContent {
-  @include position($position: fixed, $left: false);
+  @include position($position: fixed, $left: none);
   background-color: $white-color;
   min-height: 100vh;
   width: 25rem;
@@ -17,7 +17,7 @@
 }
 
 .modalBottomContent {
-  @include position($position: fixed, $top: false);
+  @include position($position: fixed, $top: none);
   align-self: flex-end;
   background-color: $white-color;
   width: 100vh;
