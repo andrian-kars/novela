@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDimension } from 'src/hooks';
-import { TABLET_WIDTH } from 'src/constants';
+import { TABLET_WIDTH_BREAKPOINT } from 'src/constants';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
@@ -12,13 +12,8 @@ export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { width } = useDimension();
 
-  const openModalHandler = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModalHandler = () => {
-    setIsModalOpen(false);
-  };
+  const openModalHandler = () => setIsModalOpen(true);
+  const closeModalHandler = () => setIsModalOpen(false);
 
   return (
     <header id="top" className={s.whrapper}>
@@ -33,7 +28,7 @@ export const Header = () => {
         {isModalOpen ? (
           <Modal
             closeModalHandler={closeModalHandler}
-            location={TABLET_WIDTH < width ? 'right' : 'bottom'}
+            location={TABLET_WIDTH_BREAKPOINT < width ? 'right' : 'bottom'}
           >
             <p>Modal content</p>
           </Modal>
