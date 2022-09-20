@@ -1,0 +1,26 @@
+@import 'src/styles/_variables';
+@import 'src/styles/_mixins';
+
+.modalOverlay {
+  @include position($position: fixed);
+  background-color: $background-color;
+  opacity: $modal-opacity;
+  z-index: $modal-overlay-index;
+}
+
+.modalRightContent {
+  @include position($position: fixed, $left: none);
+  background-color: $white-color;
+  min-height: 100vh;
+  width: 25rem;
+  z-index: $modal-index;
+}
+
+.modalBottomContent {
+  @include position($position: fixed, $top: none);
+  align-self: flex-end;
+  background-color: $white-color;
+  width: 100vh;
+  height: 25rem;
+  z-index: $modal-index;
+}

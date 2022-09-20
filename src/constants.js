@@ -1,3 +1,8 @@
+// breakpoints
+export const TABLET_WIDTH_BREAKPOINT = 768;
+export const TINY_TABLET_BREAKPOINT = 512;
+export const DESKTOP_BREAKPOINT = 992;
+export const BIGGEST_DESKTOP_BREAKPOINT = 1200;
 // error status code
 export const ERROR_CODE_400 = '400';
 export const ERROR_CODE_403 = '403';
