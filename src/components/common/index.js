@@ -1,5 +1,5 @@
-export { Burger } from './Burger';
-export { Heading } from './Heading';
-export { Button } from './Button';
-export { Modal } from './Modal';
-export { Portal } from './Portal';
+export { Burger } from './Burger/Burger';
+export { Heading } from './Heading/Heading';
+export { Button } from './Button/Button';
+export { Modal } from './Modal/Modal';
+export { Portal } from './Portal/Portal';

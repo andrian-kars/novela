@@ -1,2 +1,2 @@
-export { useDimension } from './useDimension';
-export { useEffectOnce } from './useEffectOnce';
+export { useDimension } from './useDimension/useDimension';
+export { useEffectOnce } from './useEffectOnce/useEffectOnce';
