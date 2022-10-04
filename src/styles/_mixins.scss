@@ -44,3 +44,25 @@
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 350ms;
 }
+
+@mixin show-right($s, $t) {
+  animation: show-right $s linear;
+
+  @keyframes show-right {
+    0% {
+      transform: translateX($t);
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
+
+@mixin show-bottom($s, $t) {
+  animation: show-bottom $s linear;
+
+  @keyframes show-bottom {
+    0% {
+      transform: translateY($t);
+      animation-timing-function: ease-in-out;
+    }
+  }
+}
