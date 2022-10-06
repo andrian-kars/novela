@@ -10,19 +10,27 @@
 
 .modalRightContent {
   @include position($position: fixed, $left: none);
-  @include show-right($s: 0.8s, $t: 25rem);
+  @include show-right($s: 0.3s, $t: 25rem);
   background-color: $white-color;
   min-height: 100vh;
   width: 25rem;
   z-index: $modal-index;
 }
 
+.closeRightContent {
+  @include hide-right($s: 0.3s);
+}
+
 .modalBottomContent {
   @include position($position: fixed, $top: none);
-  @include show-bottom($s: 0.8s, $t: 25rem);
+  @include show-bottom($s: 0.3s, $t: 25rem);
   align-self: flex-end;
   background-color: $white-color;
   width: 100vh;
   height: 25rem;
   z-index: $modal-index;
+}
+
+.closeBottomContent {
+  @include hide-bottom($s: 0.3s);
 }

@@ -10,3 +10,5 @@ export const ERROR_CODE_404 = '404';
 export const ERROR_CODE_500 = '500';
 export const ERROR_CODE_502 = '502';
 export const ERROR_CODE_503 = '503';
+// timers
+export const MODAL_ANIMATION_TIME = 300;

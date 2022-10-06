@@ -3,16 +3,18 @@ import s from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
-import { useDimension } from 'src/hooks';
+import { useDimension, useMount } from 'src/hooks';
 import { TABLET_WIDTH_BREAKPOINT } from 'src/constants';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
   const [triggerBurger, setTriggerBurger] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { mounted } = useMount(isModalOpen);
   const { width } = useDimension();
 
   const openModalHandler = () => setIsModalOpen(true);
+
   const closeModalHandler = () => setIsModalOpen(false);
 
   return (
@@ -25,9 +27,10 @@ export const Header = () => {
           <Burger isActive={triggerBurger} setIsActive={setTriggerBurger} />
         </div>
         <Button handleClick={openModalHandler}>open modal</Button>
-        {isModalOpen ? (
+        {mounted ? (
           <Modal
             closeModalHandler={closeModalHandler}
+            startCloseAnimation={isModalOpen}
             location={TABLET_WIDTH_BREAKPOINT < width ? 'right' : 'bottom'}
           >
             <p>Modal content</p>
