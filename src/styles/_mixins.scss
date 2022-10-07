@@ -67,7 +67,7 @@
   @keyframes show-bottom {
     0% {
       transform: translateY($t);
-      animation-timing-function: ease-in-out;
+      animation-timing-function: ease-out;
     }
   }
 }

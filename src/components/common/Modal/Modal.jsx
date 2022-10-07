@@ -6,8 +6,11 @@ export const Modal = ({ closeModalHandler, location, startCloseAnimation, childr
   <Portal>
     <div className={s.modalOverlay} onClick={closeModalHandler} />
     <div
-      className={`${location === 'right' ? s.modalRightContent : s.modalBottomContent}
-        ${startCloseAnimation ? '' : s.closeRightContent}`}
+      className={
+        location === 'right'
+          ? `${s.modalRightContent} ${!startCloseAnimation ? s.closeRightContent : ''}`
+          : `${s.modalBottomContent} ${!startCloseAnimation ? s.closeBottomContent : ''}`
+      }
     >
       {children}
     </div>
