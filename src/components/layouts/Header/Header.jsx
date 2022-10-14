@@ -13,6 +13,7 @@ export const Header = () => {
   const { width } = useDimension();
 
   const openModalHandler = () => setIsModalOpen(true);
+
   const closeModalHandler = () => setIsModalOpen(false);
 
   return (
@@ -25,14 +26,14 @@ export const Header = () => {
           <Burger isActive={triggerBurger} setIsActive={setTriggerBurger} />
         </div>
         <Button handleClick={openModalHandler}>open modal</Button>
-        {isModalOpen ? (
+        {isModalOpen && (
           <Modal
             closeModalHandler={closeModalHandler}
             location={TABLET_WIDTH_BREAKPOINT < width ? 'right' : 'bottom'}
           >
             <p>Modal content</p>
           </Modal>
-        ) : null}
+        )}
       </div>
     </header>
   );
