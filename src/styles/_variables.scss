@@ -3,6 +3,7 @@ $primary-color: #161b22;
 $secondary-color: #01b4e4;
 $background-color: #080c10;
 $tertiaryColor: #0d1117;
+$theme-perhament-background-color: #fcf5e5;
 
 $white-color: #c9d1d9;
 $super-white-color: #fff;
@@ -46,3 +47,17 @@ $bigger-nice-index: 70;
 $nice-index: 69;
 $almost-nice-index: 68;
 $not-nice-index: 67;
+
+//themes
+[data-theme-background='light'] {
+  --background: #{$white-color};
+  --color: #{$black-color};
+}
+[data-theme-background='dark'] {
+  --background: #{$background-color};
+  --color: #{$white-color};
+}
+[data-theme-background='parchment'] {
+  --background: #{$theme-perhament-background-color};
+  --color: #{$black-color};
+}

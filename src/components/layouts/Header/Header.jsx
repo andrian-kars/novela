@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDimension } from 'src/hooks';
+import { BackgroundRadio } from 'src/components/common';
 import { TABLET_WIDTH_BREAKPOINT } from 'src/constants';
 
 export const Header = () => {
@@ -31,7 +32,19 @@ export const Header = () => {
             closeModalHandler={closeModalHandler}
             location={TABLET_WIDTH_BREAKPOINT < width ? 'right' : 'bottom'}
           >
-            <p>Modal content</p>
+            <div>
+              <p>{formatMessage({ id: 'themeSwitchHeader' })}</p>
+              <div className={s.themeSwitchContainer}>
+                <BackgroundRadio backgroundColor="#fff" color="#fff" value="light" />
+                <BackgroundRadio
+                  backgroundColor="#000000"
+                  color="#000"
+                  value="dark"
+                  defaultChecked
+                />
+                <BackgroundRadio backgroundColor="#f6edd4" color="#f6edd4" value="parchment" />
+              </div>
+            </div>
           </Modal>
         )}
       </div>

@@ -33,6 +33,5 @@ export const Modal = ({ closeModalHandler, location, children }) => {
 Modal.propTypes = {
   location: PropTypes.oneOf(['right', 'bottom']).isRequired,
   children: PropTypes.node.isRequired,
-  startCloseAnimation: PropTypes.bool.isRequired,
   closeModalHandler: PropTypes.func.isRequired
 };
