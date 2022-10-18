@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Burger, Heading, Button, Modal } from 'src/components/common';
 import s from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
@@ -7,7 +8,7 @@ import { useDimension } from 'src/hooks';
 import { BackgroundRadio } from 'src/components/common';
 import { TABLET_WIDTH_BREAKPOINT } from 'src/constants';
 
-export const Header = () => {
+export const Header = ({ color, background }) => {
   const { formatMessage } = useIntl();
   const [triggerBurger, setTriggerBurger] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,6 +30,8 @@ export const Header = () => {
         <Button handleClick={openModalHandler}>open modal</Button>
         {isModalOpen && (
           <Modal
+            color={color}
+            background={background}
             closeModalHandler={closeModalHandler}
             location={TABLET_WIDTH_BREAKPOINT < width ? 'right' : 'bottom'}
           >
@@ -36,13 +39,8 @@ export const Header = () => {
               <p>{formatMessage({ id: 'themeSwitchHeader' })}</p>
               <div className={s.themeSwitchContainer}>
                 <BackgroundRadio backgroundColor="#fff" color="#fff" value="light" />
-                <BackgroundRadio
-                  backgroundColor="#000000"
-                  color="#000"
-                  value="dark"
-                  defaultChecked
-                />
-                <BackgroundRadio backgroundColor="#f6edd4" color="#f6edd4" value="parchment" />
+                <BackgroundRadio backgroundColor="#000000" color="#000" value="dark" />
+                <BackgroundRadio backgroundColor="#f6edd4" color="#fcf5e5" value="parchment" />
               </div>
             </div>
           </Modal>
@@ -50,4 +48,9 @@ export const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  background: PropTypes.oneOf(['light', 'dark', 'parchment']),
+  color: PropTypes.oneOf(['light', 'dark', 'parchment'])
 };

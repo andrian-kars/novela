@@ -3,12 +3,15 @@
 @import './../variables';
 
 .whrapper {
+  h1 {
+    color: var(--color);
+  }
   @include flex(space-between);
   @include position(fixed);
   height: $header-height-mobile;
 
   padding: 0 $whrapper-padding;
-  background-color: $primary-color;
+  background-color: var(--header-background);
   box-shadow: $bottom-shadow;
   z-index: $bigger-nice-index;
 

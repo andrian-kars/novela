@@ -9,7 +9,9 @@ export const Layout = ({ children }) => {
     color: 'light',
     background: 'dark'
   });
+
   const { background, color } = theme;
+
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
     setTheme((prevState) => ({ ...prevState, [name]: value }));
@@ -22,7 +24,7 @@ export const Layout = ({ children }) => {
       className={`${s.background} ${s.color}`}
       onChange={onChangeHandler}
     >
-      <Header />
+      <Header color={color} background={background} />
       <Main>{children}</Main>
     </div>
   );

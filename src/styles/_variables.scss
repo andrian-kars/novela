@@ -3,7 +3,12 @@ $primary-color: #161b22;
 $secondary-color: #01b4e4;
 $background-color: #080c10;
 $tertiaryColor: #0d1117;
+
 $theme-perhament-background-color: #fcf5e5;
+$theme-light-background-color: #fff;
+$theme-dark-background-color: #080c10;
+
+$header-perhament-background-color: #f7eed9;
 
 $white-color: #c9d1d9;
 $super-white-color: #fff;
@@ -50,14 +55,20 @@ $not-nice-index: 67;
 
 //themes
 [data-theme-background='light'] {
-  --background: #{$white-color};
+  --background: #{$theme-light-background-color};
   --color: #{$black-color};
+  --header-background: #{$white-color};
+  --modal-background: #{$white-color};
 }
 [data-theme-background='dark'] {
-  --background: #{$background-color};
+  --background: #{$theme-dark-background-color};
   --color: #{$white-color};
+  --header-background: #{$primary-color};
+  --modal-background: #{$primary-color};
 }
 [data-theme-background='parchment'] {
   --background: #{$theme-perhament-background-color};
   --color: #{$black-color};
+  --header-background: #{$header-perhament-background-color};
+  --modal-background: #{$theme-perhament-background-color};
 }
