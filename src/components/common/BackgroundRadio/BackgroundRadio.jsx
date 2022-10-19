@@ -2,7 +2,11 @@ import PropTypes from 'prop-types';
 import s from './BackgroundRadio.module.scss';
 
 export const BackgroundRadio = ({ backgroundColor, color, value, label, defaultChecked }) => (
-  <label className={s.radio} style={{ backgroundColor, color }} htmlFor={value}>
+  <label
+    className={`${s.radio} ${defaultChecked ? s.radioChecked : ''}`}
+    style={{ backgroundColor, color }}
+    htmlFor={value}
+  >
     <span>
       <input
         type="radio"

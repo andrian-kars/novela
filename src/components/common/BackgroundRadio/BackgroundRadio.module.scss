@@ -16,10 +16,14 @@
   }
 }
 
+.radioChecked {
+  border: 1px solid $radio-checked-color;
+}
+
 input[type='radio'] {
   display: none;
 }
 
-input[type='radio']:checked {
-  border: 1px solid red;
+label:active {
+  border: 1px solid $blue-color;
 }

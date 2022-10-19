@@ -28,6 +28,7 @@ export const Header = ({ color, background }) => {
           <Burger isActive={triggerBurger} setIsActive={setTriggerBurger} />
         </div>
         <Button handleClick={openModalHandler}>open modal</Button>
+
         {isModalOpen && (
           <Modal
             color={color}
@@ -38,9 +39,24 @@ export const Header = ({ color, background }) => {
             <div>
               <p>{formatMessage({ id: 'themeSwitchHeader' })}</p>
               <div className={s.themeSwitchContainer}>
-                <BackgroundRadio backgroundColor="#fff" color="#fff" value="light" />
-                <BackgroundRadio backgroundColor="#000000" color="#000" value="dark" />
-                <BackgroundRadio backgroundColor="#f6edd4" color="#fcf5e5" value="parchment" />
+                <BackgroundRadio
+                  backgroundColor="#fff"
+                  color="#fff"
+                  value="light"
+                  defaultChecked={background === 'light'}
+                />
+                <BackgroundRadio
+                  backgroundColor="#000000"
+                  color="#000"
+                  value="dark"
+                  defaultChecked={background === 'dark'}
+                />
+                <BackgroundRadio
+                  backgroundColor="#f6edd4"
+                  color="#fcf5e5"
+                  value="parchment"
+                  defaultChecked={background === 'parchment'}
+                />
               </div>
             </div>
           </Modal>
@@ -51,6 +67,6 @@ export const Header = ({ color, background }) => {
 };
 
 Header.propTypes = {
-  background: PropTypes.oneOf(['light', 'dark', 'parchment']),
-  color: PropTypes.oneOf(['light', 'dark', 'parchment'])
+  background: PropTypes.oneOf(['light', 'dark', 'parchment']).isRequired,
+  color: PropTypes.oneOf(['light', 'dark', 'parchment']).isRequired
 };
