@@ -1,6 +1,7 @@
 @import 'src/styles/_variables';
 
 .background {
+  transition: $theme-transition;
   background-color: var(--background);
 }
 

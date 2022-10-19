@@ -14,6 +14,7 @@
   background-color: var(--header-background);
   box-shadow: $bottom-shadow;
   z-index: $bigger-nice-index;
+  transition: $theme-transition;
 
   @media (min-width: $tablet) {
     height: $header-height-tablet;

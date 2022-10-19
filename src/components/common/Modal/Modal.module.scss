@@ -17,6 +17,7 @@
   width: 25rem;
   padding: 20px 20px;
   z-index: $modal-index;
+  transition: $theme-transition;
 }
 
 .closeRightContent {
