@@ -4,7 +4,7 @@ import s from './Modal.module.scss';
 import { Portal } from 'src/components/common';
 import { MODAL_ANIMATION_TIME } from 'src/constants';
 
-export const Modal = ({ closeModalHandler, location, children, color, background }) => {
+export const Modal = ({ closeModalHandler, location, children }) => {
   const [startCloseAnimation, setStartCloseAnimation] = useState(false);
 
   const startCloseAnimationHandler = () => {
@@ -19,8 +19,6 @@ export const Modal = ({ closeModalHandler, location, children, color, background
     <Portal>
       <div className={s.modalOverlay} onClick={startCloseAnimationHandler} />
       <div
-        data-theme-color={color}
-        data-theme-background={background}
         className={
           location === 'right'
             ? `${s.modalRightContent}  ${startCloseAnimation ? s.closeRightContent : ''}`
@@ -36,7 +34,5 @@ export const Modal = ({ closeModalHandler, location, children, color, background
 Modal.propTypes = {
   location: PropTypes.oneOf(['right', 'bottom']).isRequired,
   children: PropTypes.node.isRequired,
-  closeModalHandler: PropTypes.func.isRequired,
-  background: PropTypes.oneOf(['light', 'dark', 'parchment']),
-  color: PropTypes.oneOf(['light', 'dark', 'parchment'])
+  closeModalHandler: PropTypes.func.isRequired
 };
