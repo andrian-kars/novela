@@ -4,11 +4,15 @@ import { ERROR_CODE_404 } from 'src/constants';
 import { Header, Main } from './components/layouts';
 import './styles/index.scss';
 import { useEffectOnce } from 'src/hooks/useEffectOnce/useEffectOnce';
+import { themeAdapter } from 'src/helpers/adapters';
 
 export const App = () => {
   useEffectOnce(() => {
-    document.body.setAttribute('data-theme-color', 'light');
-    document.body.setAttribute('data-theme-background', 'dark');
+    const theme = themeAdapter.theme;
+
+    for (const key in theme) {
+      document.body.setAttribute(`data-theme-${key}`, theme[key]);
+    }
   });
 
   return (
