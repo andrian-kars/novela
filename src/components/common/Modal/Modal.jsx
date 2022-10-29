@@ -14,13 +14,14 @@ export const Modal = ({ closeModalHandler, location, children }) => {
     }, MODAL_ANIMATION_TIME);
     setStartCloseAnimation(true);
   };
+
   return (
     <Portal>
       <div className={s.modalOverlay} onClick={startCloseAnimationHandler} />
       <div
         className={
           location === 'right'
-            ? `${s.modalRightContent} ${startCloseAnimation ? s.closeRightContent : ''}`
+            ? `${s.modalRightContent}  ${startCloseAnimation ? s.closeRightContent : ''}`
             : `${s.modalBottomContent} ${startCloseAnimation ? s.closeBottomContent : ''}`
         }
       >
@@ -33,6 +34,5 @@ export const Modal = ({ closeModalHandler, location, children }) => {
 Modal.propTypes = {
   location: PropTypes.oneOf(['right', 'bottom']).isRequired,
   children: PropTypes.node.isRequired,
-  startCloseAnimation: PropTypes.bool.isRequired,
-  closeModalHandler: PropTypes.func.isRequired
+  closeModalHandler: PropTypes.func.isRequired,
 };

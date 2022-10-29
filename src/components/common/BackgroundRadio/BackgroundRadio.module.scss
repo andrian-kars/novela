@@ -1,0 +1,28 @@
+@import 'src/styles/_variables';
+@import 'src/styles/_mixins';
+
+.radio {
+  @include flex();
+  height: 2em;
+  width: 2em;
+  border: 1px solid $white-color;
+  border-radius: 100%;
+  padding: 0 1rem;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  & input {
+    margin-right: 20px;
+  }
+}
+
+.radioChecked {
+  border: 1px solid $radio-checked-color;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+label:active {
+  border: 1px solid $blue-color;
+}

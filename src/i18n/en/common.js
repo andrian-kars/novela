@@ -14,5 +14,6 @@ export const common = Object.freeze({
   'error.503.title': 'The service is unavailable.',
   'error.503.subTitle': 'The server is temporarily unable to process the request.',
   'error.default.title': 'Unknown error.',
-  'error.default.subTitle': 'An unknown error occurred.'
+  'error.default.subTitle': 'An unknown error occurred.',
+  themeSwitchHeader: 'Themes',
 });

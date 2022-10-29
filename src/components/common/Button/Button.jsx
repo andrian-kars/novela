@@ -17,5 +17,5 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   type: PropTypes.oneOf(['submit', 'reset', 'button']),
   className: PropTypes.string,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
 };

@@ -8,7 +8,7 @@ import {
   ERROR_CODE_404,
   ERROR_CODE_500,
   ERROR_CODE_502,
-  ERROR_CODE_503
+  ERROR_CODE_503,
 } from 'src/constants';
 import s from './ErrorPage.module.scss';
 
@@ -62,5 +62,5 @@ export const ErrorPage = ({ errorCode }) => {
 };
 
 ErrorPage.propTypes = {
-  errorCode: PropTypes.string
+  errorCode: PropTypes.string,
 };

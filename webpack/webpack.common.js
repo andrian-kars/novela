@@ -10,8 +10,8 @@ module.exports = {
         test: /\.(jsx|js)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -22,43 +22,43 @@ module.exports = {
             options: {
               modules: {
                 auto: true,
-                localIdentName: '[folder]__[local]'
-              }
-            }
+                localIdentName: '[folder]__[local]',
+              },
+            },
           },
           'postcss-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: 'asset/inline'
-      }
-    ]
+        type: 'asset/inline',
+      },
+    ],
   },
   output: {
     path: resolve('build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve('public/index.html')
+      template: resolve('public/index.html'),
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
-      chunkFilename: 'css/[name].chunk.css'
-    })
+      chunkFilename: 'css/[name].chunk.css',
+    }),
   ],
   resolve: {
     alias: {
       public: resolve('public'),
-      src: resolve('src')
+      src: resolve('src'),
     },
-    extensions: ['.jsx', '.js', '.scss']
+    extensions: ['.jsx', '.js', '.scss'],
   },
-  stats: 'errors-only'
+  stats: 'errors-only',
 };

@@ -3,7 +3,7 @@
 
 .modalOverlay {
   @include position($position: fixed);
-  background-color: $background-color;
+  background: $background-color;
   opacity: $modal-opacity;
   z-index: $modal-overlay-index;
 }
@@ -11,10 +11,13 @@
 .modalRightContent {
   @include position($position: fixed, $left: none);
   @include show-right($s: 0.3s, $t: 25rem);
-  background-color: $white-color;
+  background-color: $primary-color;
+  color: $white-color;
   height: 100vh;
   width: 25rem;
+  padding: 20px 20px;
   z-index: $modal-index;
+  transition: $theme-transition;
 }
 
 .closeRightContent {
@@ -24,8 +27,9 @@
 .modalBottomContent {
   @include position($position: fixed, $top: none);
   @include show-bottom($s: 0.3s, $t: 25rem);
+  background-color: $primary-color;
+  color: $white-color;
   align-self: flex-end;
-  background-color: $white-color;
   height: 25rem;
   width: 100vh;
   z-index: $modal-index;

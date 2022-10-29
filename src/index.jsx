@@ -16,5 +16,5 @@ root.render(
         <App />
       </IntlProvider>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
