@@ -13,20 +13,20 @@ const BACKGROUND_THEME_CHOICES = [
     name: 'background',
     value: 'light',
     color: '#fff',
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
   },
   {
     name: 'background',
     value: 'dark',
     color: '#000',
-    backgroundColor: '#000'
+    backgroundColor: '#000',
   },
   {
     name: 'background',
     value: 'parchment',
     color: '#fcf5e5',
-    backgroundColor: '#f6edd4'
-  }
+    backgroundColor: '#f6edd4',
+  },
 ];
 
 export const HeaderModal = ({ closeModalHandler }) => {
@@ -73,5 +73,5 @@ export const HeaderModal = ({ closeModalHandler }) => {
 };
 
 HeaderModal.propTypes = {
-  closeModalHandler: PropTypes.func.isRequired
+  closeModalHandler: PropTypes.func.isRequired,
 };

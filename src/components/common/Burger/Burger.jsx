@@ -14,5 +14,5 @@ export const Burger = ({ isActive, setIsActive }) => (
 
 Burger.propTypes = {
   isActive: PropTypes.bool.isRequired,
-  setIsActive: PropTypes.func.isRequired
+  setIsActive: PropTypes.func.isRequired,
 };

@@ -16,5 +16,5 @@ BackgroundRadio.propTypes = {
   color: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  defaultChecked: PropTypes.bool
+  defaultChecked: PropTypes.bool,
 };

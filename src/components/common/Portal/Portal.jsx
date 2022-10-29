@@ -22,5 +22,5 @@ export const Portal = ({ children }) => {
 };
 
 Portal.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };

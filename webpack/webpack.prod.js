@@ -6,6 +6,6 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new CleanWebpackPlugin(),
-    new WebpackManifestPlugin({ fileName: 'asset-manifest.json' })
-  ]
+    new WebpackManifestPlugin({ fileName: 'asset-manifest.json' }),
+  ],
 };
