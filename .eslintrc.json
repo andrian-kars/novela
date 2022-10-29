@@ -14,15 +14,16 @@
   "rules": {
     "indent": 0,
     "linebreak-style": ["error", "windows"],
-    "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
+    "react/no-unescaped-entities": "off",
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "crlf",
-        "jsxBracketSameLine": false
+        "jsxBracketSameLine": false,
+        "trailingComma": "all"
       }
     ]
   },
