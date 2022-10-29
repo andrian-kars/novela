@@ -1,11 +1,10 @@
 @import 'src/styles/_variables';
+@import 'src/styles/_mixins';
 
 .radio {
+  @include flex();
   height: 2em;
   width: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border: 1px solid $white-color;
   border-radius: 100%;
   padding: 0 1rem;

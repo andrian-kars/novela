@@ -1,15 +1,15 @@
 @import 'src/styles/_mixins';
 @import 'src/styles/_variables';
+@import 'src/styles/themes';
 @import './../variables';
 
 .main {
-  display: flex;
-  justify-content: center;
+  @include flex();
   min-height: 100vh;
   padding-top: $header-height-mobile;
   transition: $theme-transition;
-  background-color: var(--background);
-  color: var(--color);
+  background-color: $primary-color;
+  color: $white-color;
 
   @media (min-width: $tablet) {
     padding-top: $header-height-tablet;
