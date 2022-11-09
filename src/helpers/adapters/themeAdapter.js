@@ -1,4 +1,4 @@
-import { themeHelper } from './themeHelper';
+import { themeHelper } from 'src/helpers/themeHelper';
 
 export class ThemeAdapter {
   #theme = themeHelper();
