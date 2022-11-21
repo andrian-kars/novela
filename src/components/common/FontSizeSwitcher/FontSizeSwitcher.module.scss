@@ -1,0 +1,22 @@
+@import 'src/styles/_mixins';
+@import 'src/styles/_variables';
+
+.container {
+  @include flex($j: flex);
+}
+
+.fontSizeDisplay {
+  @include flex();
+  width: 4rem;
+  height: 2rem;
+  border-top: 1px solid $btn-color;
+  border-bottom: 1px solid $btn-color;
+}
+
+.buttonIncrease {
+  @include buttons($increase-decrease: true, $dir: right);
+}
+
+.buttonDecrease {
+  @include buttons($increase-decrease: true, $dir: left);
+}

@@ -76,3 +76,32 @@
   height: 0px;
   transition: height, $s linear;
 }
+
+@mixin buttons($increase-decrease: false, $dir: '') {
+  @include flex(center, center, inline-flex);
+  color: $super-white-color;
+  background-color: $btn-color;
+  @if $increase-decrease {
+    @if $dir == right {
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+    @if $dir == left {
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+  } @else {
+    border-radius: $border-radius;
+  }
+  font-size: 0.875rem;
+  height: 2rem;
+  padding: 0 1.5rem;
+  transition: $simple-transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-hover-color;
+  }
+
+  &:disabled {
+    background-color: $btn-disabled;
+  }
+}

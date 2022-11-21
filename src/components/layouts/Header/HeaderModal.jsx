@@ -3,7 +3,7 @@ import { Modal } from 'src/components/common';
 import s from './Header.module.scss';
 import { useIntl } from 'react-intl';
 import { useDimension } from 'src/hooks';
-import { BackgroundRadio } from 'src/components/common';
+import { BackgroundRadio, FontSizeSwitcher } from 'src/components/common';
 import { TABLET_WIDTH_BREAKPOINT } from 'src/constants';
 import { useState } from 'react';
 import { themeAdapter } from 'src/helpers/adapters';
@@ -67,6 +67,7 @@ export const HeaderModal = ({ closeModalHandler }) => {
             />
           ))}
         </div>
+        <FontSizeSwitcher />
       </div>
     </Modal>
   );
