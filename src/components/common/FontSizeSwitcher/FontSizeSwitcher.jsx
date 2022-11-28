@@ -1,29 +1,41 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import { Button } from 'src/components/common';
+import { fontSizeAdapter } from 'src/helpers/adapters';
 import s from './FontSizeSwitcher.module.scss';
 
-export const FontSizeSwitcher = () => {
-  const [fontSize, setFontSize] = useState(14);
+export const FontSizeSwitcher = ({ size, setSize, title, max, min }) => {
   const increase = () => {
-    return setFontSize(fontSize + 1);
+    const newSize = size + 1;
+    fontSizeAdapter.size = newSize;
+    setSize(newSize);
   };
+
   const decrease = () => {
-    return setFontSize(fontSize - 1);
+    const newSize = size - 1;
+    fontSizeAdapter.size = newSize;
+    setSize(newSize);
   };
+
   return (
-    <div className={s.container}>
-      <Button handleClick={decrease} disabled={fontSize === 14} className={s.buttonDecrease}>
-        -
-      </Button>
-      <p className={s.fontSizeDisplay}>{fontSize}</p>
-      <Button handleClick={increase} disabled={fontSize === 15} className={s.buttonIncrease}>
-        +
-      </Button>
-    </div>
+    <>
+      <p>{title}</p>
+      <div className={s.container}>
+        <Button handleClick={decrease} disabled={size === min} className={s.buttonDecrease}>
+          -
+        </Button>
+        <p className={s.fontSizeDisplay}>{size}</p>
+        <Button handleClick={increase} disabled={size === max} className={s.buttonIncrease}>
+          +
+        </Button>
+      </div>
+    </>
   );
 };
 
 FontSizeSwitcher.propTypes = {
-  fontSize: PropTypes.number,
+  size: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  setSize: PropTypes.func.isRequired,
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
 };

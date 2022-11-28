@@ -29,9 +29,13 @@ const BACKGROUND_THEME_CHOICES = [
   },
 ];
 
-export const HeaderModal = ({ closeModalHandler }) => {
+const MAX_FONT_SIZE = 50;
+const MIN_FONT_SIZE = 14;
+
+export const HeaderModal = ({ closeModalHandler, fontSize, setFontSize }) => {
   const { formatMessage } = useIntl();
   const { width } = useDimension();
+  const fontSizeSwitcherTitle = formatMessage({ id: 'fontSizeSwitchHeader' });
 
   const [theme, setTheme] = useState(themeAdapter.theme);
 
@@ -67,12 +71,20 @@ export const HeaderModal = ({ closeModalHandler }) => {
             />
           ))}
         </div>
-        <FontSizeSwitcher />
       </div>
+      <FontSizeSwitcher
+        size={fontSize}
+        setSize={setFontSize}
+        title={fontSizeSwitcherTitle}
+        max={MAX_FONT_SIZE}
+        min={MIN_FONT_SIZE}
+      />
     </Modal>
   );
 };
 
 HeaderModal.propTypes = {
   closeModalHandler: PropTypes.func.isRequired,
+  setFontSize: PropTypes.func.isRequired,
+  fontSize: PropTypes.number.isRequired,
 };

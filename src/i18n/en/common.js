@@ -16,4 +16,5 @@ export const common = Object.freeze({
   'error.default.title': 'Unknown error.',
   'error.default.subTitle': 'An unknown error occurred.',
   themeSwitchHeader: 'Themes',
+  fontSizeSwitchHeader: 'Font size',
 });

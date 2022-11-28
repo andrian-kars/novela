@@ -1,15 +1,17 @@
 import { Burger, Heading, Button } from 'src/components/common';
 import s from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useIntl } from 'react-intl';
 import { HeaderModal } from './HeaderModal';
+import { ContextHelper } from 'src/helpers/ContextHelper';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
 
   const [triggerBurger, setTriggerBurger] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { fontSize, setFontSize } = useContext(ContextHelper);
 
   const openModalHandler = () => setIsModalOpen(true);
   const closeModalHandler = () => setIsModalOpen(false);
@@ -25,7 +27,13 @@ export const Header = () => {
         </div>
         <Button handleClick={openModalHandler}>open modal</Button>
 
-        {isModalOpen && <HeaderModal closeModalHandler={closeModalHandler} />}
+        {isModalOpen && (
+          <HeaderModal
+            fontSize={fontSize}
+            setFontSize={setFontSize}
+            closeModalHandler={closeModalHandler}
+          />
+        )}
       </div>
     </header>
   );

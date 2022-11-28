@@ -16,4 +16,5 @@ export const common = Object.freeze({
   'error.default.title': 'Невідома помилка.',
   'error.default.subTitle': 'Відбулась невідома помилка.',
   themeSwitchHeader: 'Теми',
+  fontSizeSwitchHeader: 'Розмір тексту',
 });
