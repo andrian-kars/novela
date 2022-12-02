@@ -10,7 +10,7 @@ import { ContextHelper } from 'src/helpers/ContextHelper';
 
 export const App = () => {
   const [fontSize, setFontSize] = useState(fontSizeAdapter.size);
-  const [lineHeight, setLineHeight] = useState(1);
+  const [lineHeight, setLineHeight] = useState();
   const providerValue = useMemo(
     () => ({ fontSize, setFontSize, lineHeight, setLineHeight }),
     [fontSize, setFontSize],
